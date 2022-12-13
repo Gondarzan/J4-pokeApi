@@ -1,0 +1,90 @@
+form {
+    width: 200px;
+    margin: 20px auto;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+}
+
+.poke-card {
+    position: relative;
+    height: fit-content;
+    font-family: 'Roboto Mono', monospace;
+    max-width: 400px;
+    border-radius: 25px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #FFF;
+    border: 1px solid black;
+}
+
+.pokedex{
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.poke-card::before {
+    content: '';
+    background-size: 3px 3px;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: -1;
+}
+
+.img-container {
+    position: relative;
+    width: 250px;
+    margin: 20px auto;
+}
+
+.poke-stats div {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.poke-types div {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px dashed black;
+    font-weight: 600;
+}
+
+.poke-img {
+    width: 200px;
+    border-radius: 10%;
+}
+
+.data-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;;
+}
+
+.poke-id{
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.poke-weight{
+    font-weight: 600;
+}
+
+.poke-height{
+    font-weight: 600;
+}
+
+
+
