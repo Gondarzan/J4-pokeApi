@@ -9,7 +9,6 @@ const pokeWeight = document.querySelector('[data-poke-weight]');
 const pokeHeight = document.querySelector('[data-poke-height]');
 
 
-
 const typeColors = {
     electric: '#FFEA70',
     normal: '#B09398',
@@ -47,9 +46,9 @@ const renderPokemonData = data => {
 
     pokeName.textContent = data.name;
     pokeImg.setAttribute('src', sprite);
-    pokeId.textContent = `N° ${data.id}`;
-    pokeWeight.textContent = `Weight: ${data.weight/ 10} Kg  `;
-    pokeHeight.textContent = `| Height: ${data.height/ 10} m `;
+    pokeId.textContent = `N°. ${data.id}`;
+    pokeWeight.textContent = `Weight: ${data.weight/ 10} Kg`;
+    pokeHeight.textContent = `Height: ${data.height/ 10} m `;
     setCardColor(types);
     renderPokemonTypes(types);
     renderPokemonStats(stats);
@@ -58,8 +57,9 @@ const renderPokemonData = data => {
 const setCardColor = types => {
     const colorOne = typeColors[types[0].type.name];
     const colorTwo = types[1] ? typeColors[types[1].type.name] : typeColors.default;
-    pokeImg.style.background = `radial-gradient(${colorTwo}33%, ${colorOne} 33%)`;
-    pokeImg.style.backgroundSize = ' 5px 5px';
+    pokeImg.style.backgroundSize = ' 1000px 1000px';
+    pokeId.style.background = `${colorOne}`;
+    pokeId.style.borderRadius = '10px 10px 0px 0';
 }
 
 
@@ -68,7 +68,13 @@ const renderPokemonTypes = types => {
     pokeTypes.innerHTML = '';
     types.forEach(type =>{
         const typeTextElement = document.createElement("div");
-        typeTextElement.style.color = typeColors[type.type.name];
+        typeTextElement.style = "justify-content: space-evenly";
+        pokeTypes.style.display = "flex";
+        pokeTypes.style.justifyContent = "center";
+
+
+        
+        typeTextElement.style.backgroundColor = typeColors[type.type.name];        
         typeTextElement.textContent = type.type.name;
         pokeTypes.appendChild(typeTextElement);
     });
@@ -85,6 +91,7 @@ const renderPokemonStats = stats => {
         statElement.appendChild(statElementName);
         statElement.appendChild(statElementAmount);
         pokeStats.appendChild(statElement);
+
     });
 }
 
